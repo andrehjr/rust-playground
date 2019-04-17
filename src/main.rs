@@ -6,6 +6,10 @@ fn main() {
         println!("{:?}", "/foo/bar".trim_start_matches(meh));
     }
 
+    println!("->>> {:?}", Path::new("/foo").to_str().unwrap());
+    println!("->>> {:?}", Path::new("/foo/bar").to_str().unwrap());
+
+
     println!("{:?}", Path::new("/foo").components());
     println!("{:?}", Path::new("/foo/bar").components().map(|element| element.as_os_str() ).collect::<Vec<_>>());
 
