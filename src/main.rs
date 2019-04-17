@@ -6,8 +6,8 @@ fn main() {
         println!("{:?}", "/foo/bar".trim_start_matches(meh));
     }
 
-    println!("->>> {:?}", Path::new("/foo").as_os_str());
-    println!("->>> {:?}", Path::new("/foo/bar").as_os_str());
+    println!("->>> {:?}", Path::new("/foo").display());
+    println!("->>> {:?}", Path::new("/foo/bar").display());
 
 
     println!("{:?}", Path::new("/foo").components());
