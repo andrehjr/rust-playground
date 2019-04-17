@@ -9,6 +9,7 @@ fn main() {
     println!("->>> {:?}", Path::new("/foo").display());
     println!("->>> {:?}", Path::new("/foo/bar").display());
 
+    println!("> {:?}", std::path::MAIN_SEPARATOR.to_string());
 
     println!("{:?}", Path::new("/foo").components());
     println!("{:?}", Path::new("/foo/bar").components().map(|element| element.as_os_str() ).collect::<Vec<_>>());
