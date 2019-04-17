@@ -1,4 +1,4 @@
-use std::path::Path;
+use std::path::{Path, PathBuf};
 
 fn main() {
     if let Some(root) = Path::new("/foo/bar").components().next() {
@@ -8,6 +8,17 @@ fn main() {
 
     println!("->>> {:?}", Path::new("/foo").display());
     println!("->>> {:?}", Path::new("/foo/bar").display());
+
+    println!("->>> {:?}", Path::new("/foo").as_os_str());
+    println!("->>> {:?}", Path::new("/foo/bar").as_os_str());
+
+    println!("->>> {:?}", Path::new("/foo").to_str().unwrap());
+    println!("->>> {:?}", Path::new("/foo/bar").to_str().unwrap());
+
+    println!("->>> {:?}", PathBuf::from("/foo/bar").into_os_string());
+    println!("->>> {:?}", PathBuf::from("/foo/bar").as_os_str());
+    println!("->>> {:?}", PathBuf::from("/foo/bar").to_str().unwrap());
+
 
     println!("> {:?}", std::path::MAIN_SEPARATOR.to_string());
 
