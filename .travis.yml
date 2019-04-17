@@ -1,4 +1,12 @@
 language: rust
+
+rust: nightly
+
+os:
+  - linux
+  - osx
+  - windows
+
 script:
   - cargo build --verbose --all
   - cargo run
