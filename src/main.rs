@@ -17,10 +17,7 @@ fn main() {
 
     println!("->>> {:?}", PathBuf::from("/foo/bar").into_os_string());
     println!("->>> {:?}", PathBuf::from("/foo/bar").as_os_str());
-    println!("->>> {:?}", PathBuf::from("/foo/bar").to_str().unwrap());
-
-
-    println!("> {:?}", std::path::MAIN_SEPARATOR.to_string());
+    println!("->>> {:?}", PathBuf::from("/foo/bar").to_str().unwrap().trim_start_matches(|c| c == '/' || c == '\\'));
 
     println!("{:?}", Path::new("/foo").components());
     println!("{:?}", Path::new("/foo/bar").components().map(|element| element.as_os_str() ).collect::<Vec<_>>());
